@@ -45,13 +45,26 @@ function App() {
     });
   };
 
+  let content = (
+    <p style={{ textAlign: "center" }}>No goals found. Maybe add one?</p>
+  );
+
+  if (courseGoals.length > 0) {
+    content = (
+      <CourseGoalList item={courseGoals} onDeleteItem={deleteItemHandler} />
+    );
+  }
+
   return (
     <div className="App">
       <section id="goal-form">
         <CourseInput onSaveCourseGoal={addGoalHandler} />
       </section>
       <section id="goals">
-        <CourseGoalList item={courseGoals} onDeleteItem={deleteItemHandler} />
+        {content}
+        {/* {courseGoals.length > 0 && (
+          <CourseGoalList item={courseGoals} onDeleteItem={deleteItemHandler} />
+        )} */}
       </section>
     </div>
   );
