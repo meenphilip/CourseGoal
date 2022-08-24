@@ -28,7 +28,11 @@ function CourseInput(props) {
     <form onSubmit={submitHandler}>
       <div className="form-control">
         <label>Course Goal</label>
-        <input type="text" value={enteredText} onChange={addNewCourseGoalHandler} />
+        <input
+          type="text"
+          value={enteredText}
+          onChange={addNewCourseGoalHandler}
+        />
       </div>
       <Button type="submit">Add Goal</Button>
     </form>
