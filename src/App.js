@@ -1,20 +1,20 @@
-import { useState } from "react";
-import "./App.css";
-import CourseGoalList from "./components/CourseGaol/CourseGoalList/CourseGoalList";
-import CourseInput from "./components/CourseGaol/CourseInput/CourseInput";
+import { useState } from 'react';
+import './App.css';
+import CourseGoalList from './components/CourseGaol/CourseGoalList/CourseGoalList';
+import CourseInput from './components/CourseGaol/CourseInput/CourseInput';
 
 const INITIAL_COURSE_GOALS = [
   {
-    id: "g1",
-    text: "Do all course exercise!",
+    id: 'g1',
+    text: 'Do all course exercise!',
   },
   {
-    id: "g2",
-    text: "Finish the course!",
+    id: 'g2',
+    text: 'Finish the course!',
   },
   {
-    id: "g3",
-    text: "Build the UI",
+    id: 'g3',
+    text: 'Build the UI',
   },
 ];
 
@@ -27,8 +27,8 @@ function App() {
   //   });
   // };
 
-  const addGoalHandler = (enteredCourseGoal) => {
-    setCourseGoals((prevGoals) => {
+  const addGoalHandler = enteredCourseGoal => {
+    setCourseGoals(prevGoals => {
       const updatedGoals = [...prevGoals];
       updatedGoals.unshift({
         id: Math.random().toString(),
@@ -38,15 +38,15 @@ function App() {
     });
   };
 
-  const deleteItemHandler = (goalId) => {
-    setCourseGoals((prevGoals) => {
-      const updatedGoals = prevGoals.filter((goal) => goal.id !== goalId);
+  const deleteItemHandler = goalId => {
+    setCourseGoals(prevGoals => {
+      const updatedGoals = prevGoals.filter(goal => goal.id !== goalId);
       return updatedGoals;
     });
   };
 
   let content = (
-    <p style={{ textAlign: "center" }}>No goals found. Maybe add one?</p>
+    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
   );
 
   if (courseGoals.length > 0) {
@@ -56,11 +56,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <section id="goal-form">
+    <div className='App'>
+      <section id='goal-form'>
         <CourseInput onSaveCourseGoal={addGoalHandler} />
       </section>
-      <section id="goals">
+      <section id='goals'>
         {content}
         {/* {courseGoals.length > 0 && (
           <CourseGoalList item={courseGoals} onDeleteItem={deleteItemHandler} />
