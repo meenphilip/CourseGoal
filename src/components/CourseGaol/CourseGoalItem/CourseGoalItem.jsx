@@ -1,12 +1,12 @@
-import "./CourseGoalItem.css";
+import './CourseGoalItem.css';
 
-const CourseGoalItem = (props) => {
+const CourseGoalItem = props => {
   const deleteHandler = () => {
     props.onDelete(props.id);
   };
 
   return (
-    <li className="goal-item " onClick={deleteHandler}>
+    <li className='goal-item ' onClick={deleteHandler}>
       {props.children}
     </li>
   );

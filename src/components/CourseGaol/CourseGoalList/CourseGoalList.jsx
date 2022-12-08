@@ -1,11 +1,15 @@
-import CourseGoalItem from "../CourseGoalItem/CourseGoalItem";
-import "./CourseGoalList.css";
+import CourseGoalItem from '../CourseGoalItem/CourseGoalItem';
+import './CourseGoalList.css';
 
-const CourseGoalList = (props) => {
+const CourseGoalList = props => {
   return (
-    <ul className="goal-list">
-      {props.item.map((goal) => (
-        <CourseGoalItem key={goal.id} id={goal.id} onDelete={props.onDeleteItem}>
+    <ul className='goal-list'>
+      {props.item.map(goal => (
+        <CourseGoalItem
+          key={goal.id}
+          id={goal.id}
+          onDelete={props.onDeleteItem}
+        >
           {goal.text}
         </CourseGoalItem>
       ))}

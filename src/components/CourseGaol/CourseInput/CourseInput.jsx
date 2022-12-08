@@ -1,9 +1,9 @@
-import { useState } from "react";
-import Button from "../../UI/Button/Button";
-import "./CourseInput.css";
+import { useState } from 'react';
+import Button from '../../UI/Button/Button';
+import './CourseInput.css';
 
 function CourseInput(props) {
-  const [enteredText, setEnteredText] = useState("");
+  const [enteredText, setEnteredText] = useState('');
 
   const addNewCourseGoalHandler = (event) => {
     setEnteredText(event.target.value);
@@ -22,19 +22,19 @@ function CourseInput(props) {
     // add an id in the app.js
     props.onSaveCourseGoal(enteredText);
 
-    setEnteredText("");
+    setEnteredText('');
   };
   return (
     <form onSubmit={submitHandler}>
-      <div className="form-control">
+      <div className='form-control'>
         <label>Course Goal</label>
         <input
-          type="text"
+          type='text'
           value={enteredText}
           onChange={addNewCourseGoalHandler}
         />
       </div>
-      <Button type="submit">Add Goal</Button>
+      <Button type='submit'>Add Goal</Button>
     </form>
   );
 }
